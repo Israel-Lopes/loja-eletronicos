@@ -1,42 +1,63 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+.footer,
+    .push {
+      height: 50px;
+    }
+
+
 /*Label*/
 .label {
-    padding:2px;
-    margin:0px;
-    background-color:rgb(145, 145, 218);
+  padding:2px;
+  margin:0px;
+  background-color:rgb(145, 145, 218);
 }
 
 /*Menu*/
 .menu ul {
-    padding:0px;
-    margin:0px;
-    background-color:#EDEDED;
-    list-style:none;
+  padding:0px;
+  margin:0px;
+  background-color:#EDEDED;
+  list-style:none;
 }
 .menu ul li { display: inline; }
 
 .menu ul li a {
-    padding: 2px 10px;
-    display: inline-block;
+  padding: 2px 10px;
+  display: inline-block;
 
-    /* visual do link */
-    background-color:#EDEDED;
-    color: #333;
-    text-decoration: none;
-    border-bottom:3px solid #EDEDED;
+  /* visual do link */
+  background-color:#EDEDED;
+  color: #333;
+  text-decoration: none;
+  border-bottom:3px solid #EDEDED;
 }
 .menu ul li a:hover {
-    background-color:#D6D6D6;
-    color: #6D6D6D;
-    border-bottom:3px solid #EA0000;
+  background-color:#D6D6D6;
+  color: #6D6D6D;
+  border-bottom:3px solid rgb(4, 0, 234);
 }
 
 /*Card*/
 .card-root {
-    box-shadow: 0 4px 8px 0 rgba(125, 166, 231, 0.2);
-    border-radius: 5px; /* 5px rounded corners */
+  box-shadow: 0 4px 8px 0 rgba(125, 166, 231, 0.2);
+  border-radius: 5px; /* 5px rounded corners */
 }
 .image-root {
-    width: 300px;
-    right: 300px;
-    border-radius: 5px 5px 0 0;
+  width: 300px;
+  right: 300px;
+  border-radius: 5px 5px 0 0;
+}
+
+
+/*footer*/
+.list-footer ul{
+  display: inline-block;
+  list-style-type: none;
 }
