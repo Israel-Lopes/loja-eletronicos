@@ -11,7 +11,7 @@
    * Create carousel card
    * @param {Object} item 
    */
-  var createCard = (item, index) => {
+  var createCard = (item) => {
     var carouselCard = document.createElement('li');
     carouselCard.setAttribute('class', 'item');
     carouselCard.setAttribute('id', item.id);
@@ -31,14 +31,14 @@
     carouselCard.appendChild(price);
 
     carousel.appendChild(carouselCard);
-    
+
     areaRoot.appendChild(carousel);
   }
 
   const URL = 'https://israel-lopes.github.io/storage/productEletronicos.json';
   fetch(URL)
     .then(resposta => resposta.json())
-    .then(data => data.product['eletroportateis'].map((item, index) => {
+    .then(data => data.product['eletroportateis'].map((item) => {
       createCard(item, index);
     }))
     .catch(erro => console.error(erro));
