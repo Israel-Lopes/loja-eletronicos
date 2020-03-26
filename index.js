@@ -1,39 +1,42 @@
-const URL = 'https://israel-lopes.github.io/storage/productEletronicos.json';
+(function createCarousel () {
 
-/*
-fetch(URL)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data.product);
-  });
-*/
+  /**
+   * Create carousel card
+   * @param {Object} item 
+   */
+  var createCard = (item) => {
+    var areaRoot = document.querySelector('.area-root');
+      var carousel = document.createElement('ul');
+      carousel.setAttribute('class', 'carousel');
 
-/*
-fetch(URL)
-  .then( function (response) {
-    return response.json();
-  })
-  .then( function (data) {
-    return console.log(data);
-  })
-  .then( function (erro) {
-    return console.error('Erro ao fazer request', erro);
-  })
-  */
+      var carouselCard = document.createElement('li');
+      carouselCard.setAttribute('class', 'item');
 
- fetch(URL)
- .then(resposta => resposta.json())
- .then(data => getData(data.product['eletroportateis'][0]))
- .catch(erro => console.error(erro));
+      var image = document.createElement('img');
+      image.setAttribute('src', item.image);
+      carouselCard.appendChild(image);
 
-function getData(data) {
-  const eletronic = `
-    name: ${data.name},
-    id: ${data.id},
-    price: ${data.price},
-    image: ${data.price}
-  `;
-  console.log(eletronic);
-}
+      var name = document.createElement('span');
+      name.setAttribute('class', 'product-details')
+      name.innerText = item.name;
+      carouselCard.appendChild(name);
+
+      var price = document.createElement('span');
+      price.setAttribute('class', 'product-price');
+      price.innerText = item.price;
+      carouselCard.appendChild(price);
+
+      carousel.appendChild(carouselCard);
+
+      areaRoot.appendChild(carousel);
+  }
+
+  const URL = 'https://israel-lopes.github.io/storage/productEletronicos.json';
+  fetch(URL)
+    .then(resposta => resposta.json())
+    .then(data => data.product['eletroportateis'].map((item) => {
+      createCard(item);
+    }))
+    .catch(erro => console.error(erro));
+
+})();
