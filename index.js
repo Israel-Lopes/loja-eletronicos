@@ -3,7 +3,7 @@
  */
 (function createCarousel () {
 
-  var areaRoot = document.querySelector('.area-root');
+  var areaRoot = document.querySelector('.carousel-container');
   var carousel = document.createElement('ul');
   carousel.setAttribute('class', 'carousel');
 
@@ -39,7 +39,7 @@
   fetch(URL)
     .then(resposta => resposta.json())
     .then(data => data.product['eletroportateis'].map((item) => {
-      createCard(item, index);
+      createCard(item);
     }))
     .catch(erro => console.error(erro));
 

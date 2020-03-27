@@ -44,11 +44,6 @@ html, body {
   border-bottom:3px solid rgb(4, 0, 234);
 }
 
-/*Card*/
-.card-root {
-  box-shadow: 0 4px 8px 0 rgba(125, 166, 231, 0.2);
-  border-radius: 5px; /* 5px rounded corners */
-}
 .image-root {
   width: 300px;
   right: 300px;
@@ -57,7 +52,27 @@ html, body {
 
 
 /*footer*/
-.list-footer ul{
+.list-footer ul {
   display: inline-block;
   list-style-type: none;
+}
+
+/*Carousel*/
+ul.carousel li.item {
+  width:auto;
+  height:auto;
+  display: inline-block;
+  list-style-type: none;
+}
+.carousel-container {
+  width:15%;
+  height:15%;
+  border: 2px solid;
+}
+
+li.item img{ /*Diminuir foto*/
+  max-width:200px;
+  max-height:150px;
+  width: auto;
+  height: auto;
 }
